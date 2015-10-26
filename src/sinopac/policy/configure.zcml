@@ -1,0 +1,49 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="sinopac.policy">
+
+  <includeDependencies package="." />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser" />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="sinopac.policy"
+      directory="profiles/default"
+      description="Installs the sinopac.policy add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="sinopac.policy-postInstall"
+      title="sinopac.policy post_install import step"
+      description="Post install import step from sinopac.policy"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="sinopac.policy"
+      directory="profiles/uninstall"
+      description="Uninstalls the sinopac.policy add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="sinopac.policy-uninstall"
+      title="sinopac.policy uninstall import step"
+      description="Import step run during ininstalling sinopac.policy"
+      handler=".setuphandlers.uninstall">
+  </genericsetup:importStep>
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="sinopac.policy-hiddenprofiles" />
+
+</configure>

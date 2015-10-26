@@ -1,0 +1,5 @@
+====================
+sinopac.policy
+====================
+
+User documentation

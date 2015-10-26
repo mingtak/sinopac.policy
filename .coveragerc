@@ -1,0 +1,6 @@
+[report]
+include =
+    src/sinopac/*
+omit =
+    */test*
+    */upgrades/*
