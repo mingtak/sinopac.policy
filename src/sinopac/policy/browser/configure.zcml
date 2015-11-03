@@ -17,6 +17,38 @@
       directory="static"
       />
 
+  <!-- Browser view -->
+  <browser:page
+      for="*"
+      name="lotto"
+      permission="cmf.ManagePortal"
+      class=".lotto.LottoView"
+      />
+
+  <!-- Browser views -->
+  <browser:page
+      for="*"
+      name="oid"
+      permission="zope2.View"
+      class=".views.Oid"
+      />
+
+  <!-- Browser views -->
+  <browser:page
+      for="*"
+      name="members"
+      permission="cmf.ManagePortal"
+      class=".views.Members"
+      />
+
+  <!-- Browser views -->
+  <browser:page
+      for="*"
+      name="oidReport"
+      permission="cmf.ManagePortal"
+      class=".views.OidReport"
+      />
+
   <!-- Browser views -->
   <browser:page
       for="*"
@@ -24,7 +56,5 @@
       permission="cmf.ManagePortal"
       class=".views.TestFunction"
       />
-
-
 
 </configure>

@@ -1,0 +1,12 @@
+<h2>觀看影片訪客列表(臉書帳號)</h2>
+<tal:members define="users view/users">
+<h4>共計 <tal:amount content="python:len(users)"/> 名觀看影片訪客</h4>
+<h5><a tal:attributes="href context/absolute_url">回到網站首頁</a></h5>
+<ul>
+<li tal:repeat="user users">
+<span tal:replace="python:user.getProperty('fullname')" /> /
+<a target="_blank" tal:attributes="href python:'https://www.facebook.com/%s' % user.id.replace('fb', '')">臉書頁面</a> /
+<a tal:content="python:user.getProperty('email')" tal:attributes="href python:'mailto:%s' % user.getProperty('email')" />
+</li>
+</ul>
+</tal:members>

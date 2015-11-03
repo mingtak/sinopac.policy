@@ -1,0 +1,26 @@
+<h2>追蹤碼來源報告</h2>
+<h4><a tal:attributes="href context/absolute_url">回到網站首頁</a></h4>
+<div tal:define="docs view/docs;
+                 trace_code python:['MMA',
+                                    'MMANews',
+                                    'eprotal',
+                                    'card',
+                                    'Hd',
+                                    'funBanner',
+                                    'fb',
+                                    'sinou',
+                                    'NEWS',
+                                    'togo',
+                                    'popup1',
+                                    'popup2',
+                                   ]">
+
+  <ul>
+    <li tal:repeat="oid trace_code">
+      <strong tal:content="oid" />：共計
+      <span tal:content="python:docs.count('INFO OID_Record %s\n' % oid)" /> 筆來源
+    </li>
+  </ul>
+
+<h4>總計共 <tal:total replace="python:docs.count('INFO OID_Record')" /> 筆來源</h4>
+</div>
