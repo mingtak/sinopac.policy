@@ -14,7 +14,7 @@
 
 
 <h2>追蹤碼來源報告</h2>
-<h4><a tal:attributes="href context/absolute_url">回到網站首頁</a></h4>
+<!-- <h4><a tal:attributes="href context/absolute_url">回到網站首頁</a></h4> -->
 <div tal:define="docs view/docs;
                  trace_code python:['MMA',
                                     'MMANews',
