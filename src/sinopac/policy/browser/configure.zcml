@@ -17,12 +17,28 @@
       directory="static"
       />
 
-  <!-- Browser view -->
+  <!-- Browser view, 分享抽 -->
   <browser:page
       for="*"
       name="lotto"
       permission="cmf.ManagePortal"
       class=".lotto.LottoView"
+      />
+
+  <!-- Browser view, 加碼抽 -->
+  <browser:page
+      for="*"
+      name="app_lotto"
+      permission="cmf.ManagePortal"
+      class=".lotto2.Lotto2View"
+      />
+
+  <!-- Browser views -->
+  <browser:page
+      for="*"
+      name="toapp"
+      permission="zope2.View"
+      class=".lotto2.ToApp"
       />
 
   <!-- Browser views -->

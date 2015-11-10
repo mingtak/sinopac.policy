@@ -1,0 +1,35 @@
+<?python
+from plone import api
+members = api.user.get_users()
+lottoList = []
+for user in members:
+    try:
+        if user.getProperty('click_app') == True:
+            lottoList.append(user)
+    except:pass
+#        import pdb; pdb.set_trace()
+members = lottoList
+from datetime import datetime
+?>
+
+
+<tal:display condition="python:'@@app_lotto' in request['URL']">
+<h2>抽獎候選名單</h2>
+<tal:members define="users members">
+<h4>共計 <tal:amount content="python:len(users)"/> 名候選</h4>
+<h4>日期：<span tal:replace="python:datetime.now().strftime('%Y 年 %m 月 %d 日')" /></h4>
+<table class="listing">
+<tr tal:repeat="user users">
+<td>
+<span tal:replace="python:user.getProperty('fullname')" />
+</td>
+<td>
+<a target="_blank" tal:attributes="href python:'https://www.facebook.com/%s' % user.id.replace('fb', '')">臉書頁面</a>
+</td>
+<td>
+<a tal:content="python:user.getProperty('email')" tal:attributes="href python:'mailto:%s' % user.getProperty('email')" />
+</td>
+</tr>
+</table>
+</tal:members>
+</tal:display>

@@ -16,13 +16,24 @@
         />
 
 
-    <!-- viewlet -->
+    <!-- viewlet, 分享抽候選名單 -->
     <browser:viewlet
         name="sinopac.lottoMemberList"
         for="*"
         class=".viewlet.LottoMemberList"
         permission="cmf.ManagePortal"
         template="template/lotto_member_list_viewlet.pt"
+        layer="sinopac.policy.interfaces.ISinopacPolicyLayer"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+        />
+
+    <!-- viewlet, 加碼抽候選名單 -->
+    <browser:viewlet
+        name="sinopac.app_lottoMemberList"
+        for="*"
+        class=".viewlet.App_LottoMemberList"
+        permission="cmf.ManagePortal"
+        template="template/app_lotto_member_list_viewlet.pt"
         layer="sinopac.policy.interfaces.ISinopacPolicyLayer"
         manager="plone.app.layout.viewlets.interfaces.IBelowContent"
         />

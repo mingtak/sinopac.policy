@@ -6,3 +6,7 @@ class OidViewlet(base.ViewletBase):
 
 class LottoMemberList(base.ViewletBase):
     """ """
+
+class App_LottoMemberList(base.ViewletBase):
+    """ """
+
